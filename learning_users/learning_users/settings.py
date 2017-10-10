@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'basic_app',
+    'planoDeManutencao',
+    'ordemDeServico',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [

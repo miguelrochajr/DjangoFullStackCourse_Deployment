@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron text-center">
+		<h2>Criar Nova Ordem de Servico</h2>
+	</div>
+		<div class="row">
+      <form method="POST" action="{% url 'ordemDeServico:create' %}" id="postForm">
+      	{% csrf_token %}
+      	{% bootstrap_form form %}
+      	<input type="submit" value="Criar nova O.S." class="btn btn-primary btn-large">
+      </form>
+		</div>
+</div>
+
+{% endblock %}

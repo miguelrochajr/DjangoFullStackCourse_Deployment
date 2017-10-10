@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block body_block %}
+
+
+<div class="posts-page">
+	<div class="container">
+		<div class="row">
+      <h4 class='text-center'>Criar Novo Plano de Manutencao</h4>
+      <form method="POST" action="{% url 'planoDeManutencao:create' %}" id="postForm">
+      	{% csrf_token %}
+      	{% bootstrap_form form %}
+				<form method="POST">
+					 <div id="dynamicInput">
+								{# Ordem de Serviço<br><input type="text" name="myInputs[]">#}
+					 </div>
+					 <input type="button" class="btn btn-primary btn-large btn-success" value="Adicionar nova O.S." onClick="addInput('dynamicInput');">
+				 </form>
+				 <br><br>
+      	<input type="submit" value="Criar Plano de Manutenção" class="btn btn-primary btn-large">
+      </form>
+		</div>
+	</div>
+</div>
+
+	<script src="{% static 'planoDeManutencao/js/multiple.js' %}" language="Javascript" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+
+{% endblock %}
